@@ -2,8 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-// const String kPredictEndpoint = "http://127.0.0.1:8000/docs";
-const String kDocsEndpoint = "http://127.0.0.1:8000/docs";
+const String kPredictEndpoint = "https://business-registration-predictor.onrender.com/predict";
 
 void main() {
   runApp(const PredictorApp());
@@ -14,7 +13,7 @@ class PredictorApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const seed = Color(0xFF1E5F4E); // deep government-teal, distinct from generic Material blue
+    const seed = Color.fromARGB(255, 13, 112, 194); 
     return MaterialApp(
       title: 'Business Registration Predictor',
       debugShowCheckedModeBanner: false,
@@ -49,6 +48,10 @@ class PredictorApp extends StatelessWidget {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Field definition: keeps validation rules next to the field so the single
+// page stays organized as more features are added or removed.
+// ---------------------------------------------------------------------------
 class PredictorField {
   final String key; // JSON key sent to the API
   final String label;
@@ -149,7 +152,7 @@ class _PredictionPageState extends State<PredictionPage> {
     try {
       final response = await http
           .post(
-            Uri.parse(kDocsEndpoint),
+            Uri.parse(kPredictEndpoint),
             headers: {'Content-Type': 'application/json'},
             body: jsonEncode(payload),
           )
@@ -303,7 +306,7 @@ class _PredictionPageState extends State<PredictionPage> {
               style: const TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.w700,
-                color: Color(0xFF1E5F4E),
+                color: Color.fromARGB(255, 13, 112, 194)
               ),
             ),
           ],
