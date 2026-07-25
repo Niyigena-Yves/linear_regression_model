@@ -2,7 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-const String kPredictEndpoint = "";
+// const String kPredictEndpoint = "http://127.0.0.1:8000/docs";
+const String kDocsEndpoint = "http://127.0.0.1:8000/docs";
 
 void main() {
   runApp(const PredictorApp());
@@ -148,7 +149,7 @@ class _PredictionPageState extends State<PredictionPage> {
     try {
       final response = await http
           .post(
-            Uri.parse(kPredictEndpoint),
+            Uri.parse(kDocsEndpoint),
             headers: {'Content-Type': 'application/json'},
             body: jsonEncode(payload),
           )

@@ -8,11 +8,6 @@ capita) as a measurable proxy for regulatory/government service-delivery
 efficiency. A model of what drives long registration times is a model of
 where government workflow bottlenecks live.
 
-**Live API (Swagger UI):** `https://<YOUR-RENDER-APP>.onrender.com/docs`
-*(replace after deploying — see `summative/API/README.md`)*
-
-**Video demo:** `<YOUR-YOUTUBE-LINK-HERE>`
-
 ## Repo structure
 
 ```
