@@ -8,34 +8,11 @@ capita) as a measurable proxy for regulatory/government service-delivery
 efficiency. A model of what drives long registration times is a model of
 where government workflow bottlenecks live.
 
-## Repo structure
+**Live API (Swagger UI):** `https://business-registration-predictor.onrender.com/docs`
 
-```
-linear_regression_model/
-├── summative/
-│   ├── linear_regression/
-│   │   ├── multivariate.ipynb   # EDA, feature engineering, 4-model comparison, saved best model
-│   │   ├── best_model.pkl
-│   │   ├── scaler.pkl
-│   │   └── model_metadata.txt
-│   ├── API/
-│   │   ├── prediction.py        # FastAPI app: /predict, /retrain, CORS, Pydantic validation
-│   │   ├── best_model.pkl
-│   │   ├── scaler.pkl
-│   │   ├── requirements.txt
-│   │   ├── render.yaml
-│   │   └── README.md            # local run + Render deploy instructions
-│   └── FlutterApp/
-│       ├── lib/main.dart
-│       ├── pubspec.yaml
-│       └── README.md            # how to run the mobile app
-├── pyproject.toml
-└── uv.lock
-```
+**Video demo:** `https://youtu.be/YREmhyUVZqg`
 
 ## Running the mobile app
-
-See `summative/FlutterApp/README.md` — in short:
 
 ```bash
 cd summative/FlutterApp
@@ -43,7 +20,7 @@ flutter pub get
 flutter run
 ```
 
-Set the deployed API URL in `lib/main.dart` (`kPredictEndpoint`) first.
+First, set the deployed API URL in `lib/main.dart` (`kPredictEndpoint`)
 
 ## Running the API locally
 
