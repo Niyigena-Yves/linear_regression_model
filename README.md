@@ -8,9 +8,9 @@ capita) as a measurable proxy for regulatory/government service-delivery
 efficiency. A model of what drives long registration times is a model of
 where government workflow bottlenecks live.
 
-**Live API (Swagger UI):** `https://business-registration-predictor.onrender.com/docs`
+**Live API (Swagger UI):** https://business-registration-predictor.onrender.com/docs
 
-**Video demo:** `https://youtu.be/YREmhyUVZqg`
+**Video demo:** https://youtu.be/YREmhyUVZqg
 
 ## Running the mobile app
 
