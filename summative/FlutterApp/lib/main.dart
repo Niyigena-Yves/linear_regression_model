@@ -47,13 +47,8 @@ class PredictorApp extends StatelessWidget {
     );
   }
 }
-
-// ---------------------------------------------------------------------------
-// Field definition: keeps validation rules next to the field so the single
-// page stays organized as more features are added or removed.
-// ---------------------------------------------------------------------------
 class PredictorField {
-  final String key; // JSON key sent to the API
+  final String key; 
   final String label;
   final String hint;
   final double min;
