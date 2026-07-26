@@ -1,17 +1,3 @@
-"""
-Task 2: FastAPI service for the Business Registration Time Predictor.
-
-Loads the best model saved by summative/linear_regression/multivariate.ipynb
-(RandomForestRegressor, selected on lowest test RMSE against SGDRegressor,
-LinearRegression, and DecisionTreeRegressor) and serves it behind a single
-/predict endpoint, plus a /retrain endpoint for when new data becomes
-available.
-
-Run locally:
-    uv run uvicorn prediction:app --reload
-
-Swagger UI (auto-generated docs + test console): http://127.0.0.1:8000/docs
-"""
 
 import os
 from typing import List
@@ -43,25 +29,6 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# ---------------------------------------------------------------------------
-# CORS
-#
-# Reasoning:
-# - This API is consumed by a mobile Flutter app, which does not send a
-#   browser "Origin" header, so CORS does not restrict the mobile client at
-#   all -- CORS is a browser-enforced mechanism.
-# - CORS *does* matter for two browser-based use cases we want to support:
-#   (1) the Swagger UI served at /docs on this same origin, and
-#   (2) anyone testing the API directly from a browser-based HTTP client or
-#       a future web front end.
-# - We therefore allow all origins for GET/POST on this read-mostly,
-#   no-auth, publicly-documented demo endpoint (there is no user session,
-#   cookie, or credential to leak), but we explicitly restrict the allowed
-#   HTTP methods and disable credentialed requests, so this is intentionally
-#   permissive-but-scoped rather than a blanket "allow everything".
-# - If this were serving private/authenticated data, allow_origins would be
-#   pinned to a specific known frontend domain instead of "*".
-# ---------------------------------------------------------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

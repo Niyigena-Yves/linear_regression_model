@@ -7,3 +7,4 @@ RandomForestRegressor           2.231220   3.883207  0.928146  0.803694
 SGDRegressor (stochastic GD)    4.223690   4.295193  0.742515  0.759830
 LinearRegression (OLS)          4.222893   4.302050  0.742612  0.759063
 DecisionTreeRegressor           3.347979   4.782940  0.838217  0.702188
+
